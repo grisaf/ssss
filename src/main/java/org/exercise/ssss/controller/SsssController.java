@@ -29,23 +29,57 @@ public abstract class SsssController<T, ID extends Serializable, R extends JpaRe
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<T> get(@PathVariable ID id) {
-        return ResponseEntity.ok(service.get(id));
+        T entity = service.get(id);
+        if (entity == null) {
+            ResponseEntity.notFound();
+        }
+        return ResponseEntity.ok(entity);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public ResponseEntity<T> add(@RequestBody T entity) {
-        return ResponseEntity.ok(service.add(entity));
+        if (!validateAdd(entity)) {
+            ResponseEntity.badRequest();
+        }
+        T newEntity = service.add(entity);
+        if (newEntity == null) {
+            ResponseEntity.notFound();
+        }
+        return ResponseEntity.ok(newEntity);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public ResponseEntity<T> update(@PathVariable ID id, @RequestBody T entity) {
-        return ResponseEntity.ok(service.update(id, entity));
+        if (!validateUpdate(entity)) {
+            ResponseEntity.badRequest();
+        }
+        T updatedEntity = service.update(id, entity);
+        if (updatedEntity == null) {
+            ResponseEntity.notFound();
+        }
+        return ResponseEntity.ok(updatedEntity);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> delete(@PathVariable ID id) {
+        if (!validateDelete(id)) {
+            ResponseEntity.badRequest();
+        }
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    public boolean validateAdd(T entity) {
+        return entity != null;
+    }
+
+    public boolean validateUpdate(T entity) {
+        return entity != null;
+    }
+
+    public boolean validateDelete(ID id) {
+        T entity = service.get(id);
+        return entity != null;
     }
 
 }
