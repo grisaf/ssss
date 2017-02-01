@@ -1,4 +1,4 @@
-package org.exercise.ssss.model.service;
+package org.exercise.ssss.service;
 
 import java.io.Serializable;
 import java.util.List;

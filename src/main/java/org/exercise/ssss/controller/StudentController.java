@@ -1,11 +1,11 @@
-package org.exercise.ssss.model.controller;
+package org.exercise.ssss.controller;
 
 import java.util.List;
 
+import org.exercise.ssss.dao.StudentRepository;
 import org.exercise.ssss.model.ClassEntity;
 import org.exercise.ssss.model.StudentEntity;
-import org.exercise.ssss.model.dao.StudentRepository;
-import org.exercise.ssss.model.service.StudentService;
+import org.exercise.ssss.service.StudentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

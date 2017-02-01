@@ -1,9 +1,9 @@
-package org.exercise.ssss.model.service;
+package org.exercise.ssss.service;
 
 import java.util.List;
 
+import org.exercise.ssss.dao.StudentRepository;
 import org.exercise.ssss.model.StudentEntity;
-import org.exercise.ssss.model.dao.StudentRepository;
 import org.springframework.stereotype.Component;
 
 @Component

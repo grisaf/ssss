@@ -1,4 +1,4 @@
-package org.exercise.ssss.model.dao;
+package org.exercise.ssss.dao;
 
 import java.util.List;
 

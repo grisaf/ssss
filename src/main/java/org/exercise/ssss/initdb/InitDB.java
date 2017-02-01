@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.exercise.ssss.model.ClassEntity;
 import org.exercise.ssss.model.StudentEntity;
-import org.exercise.ssss.model.service.ClassService;
-import org.exercise.ssss.model.service.StudentService;
+import org.exercise.ssss.service.ClassService;
+import org.exercise.ssss.service.StudentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

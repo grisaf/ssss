@@ -1,9 +1,9 @@
-package org.exercise.ssss.model.controller;
+package org.exercise.ssss.controller;
 
 import java.io.Serializable;
 import java.util.List;
 
-import org.exercise.ssss.model.service.SsssService;
+import org.exercise.ssss.service.SsssService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.ResponseEntity;
